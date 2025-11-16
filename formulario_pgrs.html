@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Envio de Documentos - PGRS</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f1f1f1;
+        padding: 30px;
+    }
+    .container {
+        max-width: 500px;
+        margin: auto;
+        background: white;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input, button {
+        width: 100%;
+        margin-top: 10px;
+        padding: 12px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+    }
+    button {
+        background: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 20px;
+    }
+    button:hover {
+        background: #0056b3;
+    }
+    h2 {
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Envio de Documentos - PGRS</h2>
+
+    <form action="https://n8n.srv1093871.hstgr.cloud/webhook-test/pgrs-webhook"
+          method="POST" enctype="multipart/form-data">
+
+        <label>CNPJ (PDF):</label>
+        <input type="file" name="cnpj_pdf" accept="application/pdf" required>
+
+        <label>Contrato (PDF):</label>
+        <input type="file" name="contrato_pdf" accept="application/pdf" required>
+
+        <label>Licenças (PDF):</label>
+        <input type="file" name="licencas_pdf" accept="application/pdf" required>
+
+        <label>E-mail do responsável técnico:</label>
+        <input type="email" name="responsavel_email" placeholder="exemplo@email.com" required>
+
+        <button type="submit">Enviar Documentos</button>
+    </form>
+</div>
+
+</body>
+</html>
